@@ -51,11 +51,9 @@ def cantidad_stock_bajo(inventario):
 def mostrar_productos_por_categoria(inventario):
     categorias_vistas = []
     
-    # Buscamos categorías únicas usando range
     for i in range(len(inventario)):
         cat = inventario[i]["categoria"]
         
-        # Comprobamos si ya la listamos de forma manual
         ya_existe = False
         for j in range(len(categorias_vistas)):
             if categorias_vistas[j] == cat:
@@ -65,7 +63,6 @@ def mostrar_productos_por_categoria(inventario):
         if ya_existe == False:
             categorias_vistas.append(cat)
             
-    # Contamos cuántos productos pertenecen a cada categoría única
     for i in range(len(categorias_vistas)):
         cat_actual = categorias_vistas[i]
         contador = 0

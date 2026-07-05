@@ -53,7 +53,7 @@ def mostrar_producto(producto):
     print("=" * 30)
 
 def listar_productos(inventario):
-    print("\n--- LISTADO DE PRODUCTOS (ALUMNOS) ---")
+    print("\n--- LISTADO DE PRODUCTOS  ---")
     if len(inventario) == 0:
         print("No hay productos registrados.")
         return

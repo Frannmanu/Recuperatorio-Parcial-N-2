@@ -1,5 +1,4 @@
 def validar_codigo_unico(codigo, inventario):
-    # Recorremos por índice usando range y len
     for i in range(len(inventario)):
         producto = inventario[i]
         if producto["codigo"] == codigo:
@@ -8,7 +7,6 @@ def validar_codigo_unico(codigo, inventario):
 
 def pedir_cadena_no_vacia(mensaje):
     valor = input(mensaje)
-    # Validación tradicional comparando con cadena vacía pura
     while valor == "":
         print("Error: El campo no puede estar vacío.")
         valor = input(mensaje)
