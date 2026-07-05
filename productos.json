@@ -1,0 +1,11 @@
+[
+    {
+        "codigo": "casa1",
+        "nombre": "mesa",
+        "categoria": "muebles",
+        "precio": 10000.0,
+        "stock": 10,
+        "stock_minimo": 3,
+        "proveedor": "carpin"
+    }
+]
