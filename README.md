@@ -18,21 +18,27 @@ Toda la información se almacena de forma permanente en un archivo en formato **
 ## 📂 Estructura del Proyecto
 
 El sistema se compone de los siguientes archivos:
-
+![alt text](image-1.png)
 * **`main.py`:** Punto de entrada obligatorio del sistema. Inicializa el programa llamando al menú principal.
 * **`menu.py`:** Contiene el bucle principal de la interfaz de consola y deriva las acciones según la opción elegida por el usuario.
 * **`productos.py`:** Maneja la lógica central del ABM (Alta, Baja, Modificación) y las búsquedas por código o categoría.
 * **`archivos.py`:** Gestiona la lectura y escritura segura del archivo.
 * **`estadisticas.py`:** Funciones independientes para calcular totales, promedios, valores acumulados de inventario y estados de stock.
 * **`validaciones.py`:** Concentra las reglas de negocio para asegurar que los datos ingresados sean correctos.
+* **`productos.json`:** Contiene los datos que va a guardar el usuario, como tambien así pedir el resto del programa.
+* **`image.png`:** Contiene las imagenes que se utilizaran para crear la guia al usuario.
 
 ---
 
 ## 🚀 Cómo Ejecutar el Proyecto
 
-1. **Clonar el repositorio** (o descargar los archivos en una misma carpeta):
+1. **Clonar el repositorio en terminal** (o descargar los archivos en una misma carpeta):
    ```bash
-   git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/Frannmanu/Recuperatorio-Parcial-N-2.git)
+   git clone [https://github.com/Frannmanu/Recuperatorio-Parcial-N-2.git]
+2. **Desde la pagina web**
+    https://github.com/Frannmanu/Recuperatorio-Parcial-N-2
+Y copiarlo de forma manual en el apartado de <> Code
+![alt text](image-2.png)
 ---
 
 ## 📖 Guía de Uso Rápido (Paso a Paso)
