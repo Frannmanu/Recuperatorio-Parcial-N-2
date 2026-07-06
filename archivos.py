@@ -19,9 +19,11 @@ def cargar_datos():
 
     return datos
 
-def guardar_datos(alumnos):
+def guardar_datos(alumnos: list) -> None:
     """
     Guarda la lista de productos en productos.json.
+    Args:
+        alumnos (list): La lista de productos a guardar.
     """
     with open(ARCHIVO_ALUMNOS, 'w') as archivo:
         json.dump(alumnos, archivo, indent=4)

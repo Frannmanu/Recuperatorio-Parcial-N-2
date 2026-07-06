@@ -3,6 +3,7 @@ import productos
 import estadisticas
 
 def mostrar_menu():
+    """Muestra el menú principal del sistema de gestión de inventario."""
     inventario = archivos.cargar_datos()
     
     continuar = True

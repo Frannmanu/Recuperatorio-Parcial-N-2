@@ -1,7 +1,11 @@
 import validaciones
 import archivos
 
-def registrar_producto(inventario):
+def registrar_producto(inventario: list) -> None:
+    """Registra un nuevo producto en el inventario.
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- REGISTRAR NUEVO PRODUCTO ---")
     codigo = validaciones.pedir_cadena_no_vacia("Ingrese código único: ")
     es_valido = validaciones.validar_codigo_unico(codigo, inventario)
@@ -32,7 +36,14 @@ def registrar_producto(inventario):
     archivos.guardar_datos(inventario)
     print("¡Producto registrado con éxito!")
 
-def obtener_estado_stock(stock, stock_minimo):
+def obtener_estado_stock(stock: int, stock_minimo: int) -> str:
+    """Determina el estado del stock de un producto.
+    Args:
+        stock (int): La cantidad de unidades en stock.
+        stock_minimo (int): La cantidad mínima de unidades en stock.
+    Returns:
+        str: El estado del stock (Sin Stock, Stock Bajo o Stock Normal).
+    """
     if stock == 0:
         return "Sin Stock"
     elif stock <= stock_minimo:
@@ -40,7 +51,11 @@ def obtener_estado_stock(stock, stock_minimo):
     else:
         return "Stock Normal"
 
-def mostrar_producto(producto):
+def mostrar_producto(producto: dict) -> None:
+    """Muestra la información de un producto.
+    Args:
+        producto (dict): El diccionario que contiene la información del producto.
+    """
     estado = obtener_estado_stock(producto["stock"], producto["stock_minimo"])
     print(f"Código: {producto['codigo']}")
     print(f"Nombre: {producto['nombre']}")
@@ -52,7 +67,11 @@ def mostrar_producto(producto):
     print(f"Estado: {estado}")
     print("=" * 30)
 
-def listar_productos(inventario):
+def listar_productos(inventario: list) -> None:
+    """Muestra la lista de todos los productos en el inventario.
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- LISTADO DE PRODUCTOS  ---")
     if len(inventario) == 0:
         print("No hay productos registrados.")
@@ -61,7 +80,11 @@ def listar_productos(inventario):
     for i in range(len(inventario)):
         mostrar_producto(inventario[i])
 
-def buscar_producto_por_codigo(inventario):
+def buscar_producto_por_codigo(inventario: list) -> None:
+    """Busca un producto por su código y muestra su información.
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- BUSCAR PRODUCTO POR CÓDIGO ---")
     codigo = input("Ingrese el código a buscar: ")
     
@@ -77,7 +100,11 @@ def buscar_producto_por_codigo(inventario):
     if encontrado == False:
         print("Producto no encontrado.")
 
-def buscar_productos_por_categoria(inventario):
+def buscar_productos_por_categoria(inventario: list) -> None:
+    """Busca productos por su categoría y muestra su información.
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- BUSCAR POR CATEGORÍA ---")
     categoria = input("Ingrese la categoría: ")
     
@@ -92,7 +119,11 @@ def buscar_productos_por_categoria(inventario):
     if encontrado == False:
         print("No existen productos registrados para dicha categoría.")
 
-def modificar_producto(inventario):
+def modificar_producto(inventario: list) -> None:
+    """Modifica la información de un producto existente en el inventario.
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- MODIFICAR PRODUCTO ---")
     codigo = input("Ingrese el código del producto a modificar: ")
     
@@ -145,7 +176,11 @@ def modificar_producto(inventario):
     archivos.guardar_datos(inventario)
     print("¡Producto modificado y guardado con éxito!")
 
-def eliminar_producto(inventario):
+def eliminar_producto(inventario: list) -> None:
+    """Elimina un producto del inventario.
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- ELIMINAR PRODUCTO ---")
     codigo = input("Ingrese el código del producto a eliminar: ")
     

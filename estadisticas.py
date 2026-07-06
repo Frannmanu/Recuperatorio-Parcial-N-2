@@ -1,13 +1,34 @@
-def total_productos(inventario):
+def total_productos(inventario: list) -> int:
+    """Cuenta la cantidad de productos en el inventario.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        int: La cantidad de productos en el inventario.
+    """
     return len(inventario)
 
-def valor_total_inventario(inventario):
+def valor_total_inventario(inventario: list) -> float:
+    """Calcula el valor total del inventario.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        float: El valor total del inventario.
+    """
     total = 0.0
     for i in range(len(inventario)):
         total += inventario[i]["precio"] * inventario[i]["stock"]
     return total
 
-def precio_promedio(inventario):
+def precio_promedio(inventario: list) -> float:
+    """Calcula el precio promedio de los productos en el inventario.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        float: El precio promedio de los productos.
+    """
     if len(inventario) == 0:
         return 0.0
     total_precios = 0.0
@@ -15,7 +36,14 @@ def precio_promedio(inventario):
         total_precios += inventario[i]["precio"]
     return total_precios / len(inventario)
 
-def producto_mas_caro(inventario):
+def producto_mas_caro(inventario: list):
+    """Encuentra el producto más caro en el inventario.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        dict: El producto más caro.
+    """
     if len(inventario) == 0:
         return None
     mas_caro = inventario[0]
@@ -24,7 +52,14 @@ def producto_mas_caro(inventario):
             mas_caro = inventario[i]
     return mas_caro
 
-def producto_mayor_stock(inventario):
+def producto_mayor_stock(inventario: list):
+    """Encuentra el producto con mayor stock en el inventario.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        dict: El producto con mayor stock.
+    """
     if len(inventario) == 0:
         return None
     mayor_stock = inventario[0]
@@ -33,14 +68,28 @@ def producto_mayor_stock(inventario):
             mayor_stock = inventario[i]
     return mayor_stock
 
-def cantidad_sin_stock(inventario):
+def cantidad_sin_stock(inventario: list) -> int:
+    """Cuenta la cantidad de productos sin stock.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        int: La cantidad de productos sin stock.
+    """
     contador = 0
     for i in range(len(inventario)):
         if inventario[i]["stock"] == 0:
             contador += 1
     return contador
 
-def cantidad_stock_bajo(inventario):
+def cantidad_stock_bajo(inventario: list) -> int:
+    """Cuenta la cantidad de productos con stock bajo.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        int: La cantidad de productos con stock bajo.
+    """
     contador = 0
     for i in range(len(inventario)):
         p = inventario[i]
@@ -48,7 +97,12 @@ def cantidad_stock_bajo(inventario):
             contador += 1
     return contador
 
-def mostrar_productos_por_categoria(inventario):
+def mostrar_productos_por_categoria(inventario: list) -> None:
+    """Muestra la cantidad de productos por categoría.
+    
+    Args:
+        inventario (list): La lista de productos.
+    """
     categorias_vistas = []
     
     for i in range(len(inventario)):
@@ -71,14 +125,26 @@ def mostrar_productos_por_categoria(inventario):
                 contador += 1
         print(f" - {cat_actual}: {contador}")
 
-def porcentaje_stock_bajo(inventario):
+def porcentaje_stock_bajo(inventario: list) -> float:
+    """Calcula el porcentaje de productos con stock bajo.
+    
+    Args:
+        inventario (list): La lista de productos.
+    Returns:
+        float: El porcentaje de productos con stock bajo.
+    """
     total = len(inventario)
     if total == 0:
         return 0.0
     bajo = cantidad_stock_bajo(inventario)
     return (bajo / total) * 100
 
-def mostrar_estadisticas(inventario):
+def mostrar_estadisticas(inventario: list) -> None:
+    """Muestra un informe estadístico del inventario.
+    
+    Args:
+        inventario (list): La lista de productos.
+    """
     print("\n--- INFORME ESTADÍSTICO ---")
     if len(inventario) == 0:
         print("No hay datos suficientes para generar estadísticas.")
