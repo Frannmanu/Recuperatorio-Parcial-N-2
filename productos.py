@@ -76,7 +76,6 @@ def listar_productos(inventario: list) -> None:
     if len(inventario) == 0:
         print("No hay productos registrados.")
         return
-    # Recorrido con range(len(...))
     for i in range(len(inventario)):
         mostrar_producto(inventario[i])
 
@@ -159,8 +158,8 @@ def modificar_producto(inventario: list) -> None:
     if stock_nuevo != "":
         while int(stock_nuevo) < 0:
             print("El stock no puede ser negativo.")
-            stock_in = input("Ingrese stock válido: ")
-        produ_a_modificar["stock"] = int(stock_in)
+            stock_nuevo = input("Ingrese stock válido: ")
+        produ_a_modificar["stock"] = int(stock_nuevo)
         
     stock_min_nuevo = input(f"Stock mínimo actual ({produ_a_modificar['stock_minimo']}): ")
     if stock_min_nuevo != "":

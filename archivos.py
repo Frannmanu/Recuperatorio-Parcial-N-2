@@ -12,7 +12,7 @@ def cargar_datos():
         contenido = archivo.read()
 
         if contenido == "":
-            datos = []  
+            datos = []
         else:
             archivo.seek(0)
             datos = json.load(archivo)
